@@ -26,14 +26,25 @@ function toggleDetailSection(section, event) {
 }
 
 function toggleHobbyItem(item, event) {
-  event.stopPropagation();
-  const isOpen = item.classList.contains('open');
+    event.stopPropagation();
+    const isOpen = item.classList.contains('open');
 
-  if (isOpen) {
-    item.classList.remove('open');
-  } else {
-    item.classList.add('open');
-  }
+    if (isOpen) {
+        item.classList.remove('open');
+    } else {
+        item.classList.add('open');
+    }
+}
+
+function toggleRetrospectiveItem(item, event) {
+    event.stopPropagation();
+    const isOpen = item.classList.contains('open');
+
+    if (isOpen) {
+        item.classList.remove('open');
+    } else {
+        item.classList.add('open');
+    }
 }
 
 document.querySelectorAll('.card').forEach(function(card) {
@@ -91,6 +102,24 @@ document.querySelectorAll('.hobby-item').forEach(function(item) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       toggleHobbyItem(item, event);
+    }
+  });
+});
+
+document.querySelectorAll('.retrospective-item').forEach(function(item) {
+  const header = item.querySelector('.retrospective-header');
+
+  header.setAttribute('tabindex', '0');
+  header.setAttribute('role', 'button');
+
+  header.addEventListener('click', function(event) {
+    toggleRetrospectiveItem(item, event);
+  });
+
+  header.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleRetrospectiveItem(item, event);
     }
   });
 });
