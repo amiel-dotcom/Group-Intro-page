@@ -5,20 +5,21 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   padding: 40px 20px;
-  background: #f5f5f5;
-  color: #222;
+  background: linear-gradient(180deg, #fafafa, #f0f0f0);
+  color: #1a1a1a;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .subtitle {
   text-align: center;
-  color: #666;
+  color: #777;
   margin-bottom: 32px;
 }
 
@@ -32,16 +33,28 @@ h1 {
 
 .card {
   background: #fff;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 8px;
   width: 280px;
   padding: 20px;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  border-left: 3px solid transparent;
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: 2px solid #2f6f6f;
+  outline-offset: 3px;
+}
+
+.card.open {
+  border-left: 3px solid #2f6f6f;
 }
 
 .card img {
@@ -56,12 +69,14 @@ h1 {
 .card h2 {
   margin-top: 12px;
   font-size: 1.1rem;
+  color: #1a1a1a;
 }
 
 .hint {
   font-size: 0.8rem;
-  color: #888;
+  color: #2f6f6f;
   margin-top: 4px;
+  font-weight: 600;
 }
 
 /* Hidden by default */
@@ -78,12 +93,13 @@ h1 {
 }
 
 .details h3 {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #555;
+  letter-spacing: 0.06em;
+  color: #2f6f6f;
   margin-top: 14px;
   margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .details h3:first-child {
@@ -93,5 +109,5 @@ h1 {
 .details p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #333;
+  color: #444;
 }
