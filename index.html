@@ -1,99 +1,83 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-stone-50">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Try-Angle: A quiet digital garden of three equal partners. Details, stories, and reflections.">
   <title>Try-Angle | Digital Zen Garden</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Playfair Display', 'Georgia', 'serif'],
-            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-sans text-stone-800 antialiased selection:bg-stone-200 selection:text-stone-900 min-h-screen flex flex-col justify-between">
+<body>
 
   <!-- Main Container -->
-  <main class="max-w-4xl mx-auto px-6 py-20 md:py-28 flex-grow w-full">
-    
+  <main class="main-container">
+
     <!-- Editorial Header -->
-    <header class="mb-20 md:mb-24">
-      <div class="flex items-center justify-between text-[11px] font-mono tracking-widest text-stone-400 uppercase">
+    <header class="journal-header">
+      <div class="header-top-row">
         <span>Try-Angle Journal</span>
-        <button id="soundscape-btn" class="border border-stone-200 rounded px-2.5 py-0.5 hover:bg-stone-100 hover:text-stone-750 transition-all duration-300 cursor-pointer text-stone-400">
+        <button id="soundscape-btn">
           [ Soundscape: Off ]
         </button>
       </div>
-      <h1 class="font-serif text-4xl md:text-5xl font-normal mt-4 mb-6 tracking-tight text-stone-900">
+      <h1 class="site-title">
         Try-Angle.
       </h1>
-      <p class="font-serif italic text-stone-500 text-lg md:text-xl max-w-2xl leading-relaxed">
+      <p class="site-subtitle">
         A calm, symmetrical space created by three equal minds. An archive of our personal backgrounds, deep stories, and college reflections.
       </p>
-      <div class="border-b border-stone-200 mt-12 w-full"></div>
+      <hr class="header-divider">
     </header>
 
     <!-- Members Feed -->
-    <div class="space-y-20 md:space-y-28">
+    <div class="members-feed">
 
       <!-- Member 01: Amiel -->
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-        
+      <section class="member-section">
+
         <!-- Left Column: Portrait & Details -->
-        <div class="md:col-span-1">
-          <span class="font-mono text-xs text-stone-400 uppercase tracking-widest block mb-4">I / III</span>
-          
+        <div class="member-left">
+          <span class="member-index">I / III</span>
+
           <!-- Quiet Desaturated Image with Lift Effect -->
-          <div class="overflow-hidden border border-stone-200 bg-stone-100 mb-6 transition-all duration-700 ease-out hover:scale-[1.03] hover:-translate-y-1.5 hover:shadow-md aspect-square flex items-center justify-center p-4">
-            <svg class="w-full h-full text-stone-850 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="member-portrait">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Floating Symbol -->
               <text x="100" y="26" font-family="Playfair Display, Georgia, serif" font-size="14" font-weight="600" fill="currentColor" letter-spacing="2" text-anchor="middle">¥ • ¥</text>
-              
+
               <!-- Background Circle (warm pale yellow) -->
               <circle cx="100" cy="112" r="70" fill="#f4f0e6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              
+
               <!-- Character Group -->
               <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <!-- Hair peeking out back -->
                 <path d="M 78 104 C 76 112, 78 116, 78 116" />
                 <path d="M 122 104 C 124 112, 122 116, 122 116" />
-                
+
                 <!-- Neck -->
                 <path d="M 92 135 L 92 148" />
                 <path d="M 108 135 L 108 148" />
-                
+
                 <!-- Face Outline -->
                 <path d="M 80 104 C 80 128, 88 138, 100 138 C 112 138, 120 128, 120 104 C 120 104, 120 90, 100 90 C 80 90, 80 104, 80 104 Z" fill="#fcfbfa" />
-                
+
                 <!-- Eyes (expressionless) -->
                 <circle cx="93" cy="113" r="2" fill="currentColor" stroke="none" />
                 <circle cx="107" cy="113" r="2" fill="currentColor" stroke="none" />
-                
+
                 <!-- Nose -->
                 <path d="M 100 115 L 100 120" />
-                
+
                 <!-- Mouth (flat, horizontal) -->
                 <path d="M 94 127 L 106 127" />
-                
+
                 <!-- Cap Crown -->
                 <path d="M 80 98 C 80 74, 100 68, 120 98 Z" fill="#2d2a27" />
-                
+
                 <!-- Cap Visor/Brim -->
                 <path d="M 74 98 Q 100 90 126 98 Q 100 106 74 98 Z" fill="#2d2a27" />
-                
+
                 <!-- Bomber Jacket -->
                 <path d="M 68 182 C 68 160, 82 148, 92 144" fill="none" />
                 <path d="M 132 182 C 132 160, 118 148, 108 144" fill="none" />
@@ -105,101 +89,87 @@
               </g>
             </svg>
           </div>
-          
+
           <!-- Personal Metadata -->
-          <div class="space-y-4 pt-4 border-t border-stone-200/60">
+          <div class="member-meta">
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Full Name</span>
-              <span class="font-serif text-sm text-stone-950 font-medium">Amiel Benedict H. Mirasol</span>
+              <span class="meta-label">Full Name</span>
+              <span class="meta-value font-medium">Amiel Benedict H. Mirasol</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Age & Birthdate</span>
-              <span class="font-serif text-sm text-stone-950">20 / Feb 18, 2006</span>
+              <span class="meta-label">Age & Birthdate</span>
+              <span class="meta-value">20 / Feb 18, 2006</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Current Location</span>
-              <span class="font-serif text-sm text-stone-950">
+              <span class="meta-label">Current Location</span>
+              <span class="meta-value">
                 <!-- Footnote on Location -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block">
-                  Pavia, Iloilo
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
+                <span class="footnote">
+                  Ungka II, Pavia
+                  <span class="footnote-tooltip">
                     A beautiful municipality in the Western Visayas, famous for its heritage sites and the Bayluhay festival.
                   </span>
-                </span>, PH
+                </span>, Iloilo, PH
               </span>
             </div>
           </div>
 
           <!-- Live Vibe Component -->
-          <div class="pt-6 border-t border-stone-200/60 mt-6 font-mono text-[11px] text-stone-500 space-y-2.5">
-            <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-              <span class="text-stone-400 uppercase tracking-wider">Live Garden Log</span>
+          <div class="live-log">
+            <div class="live-log-header">
+              <span class="live-log-dot"></span>
+              <span class="live-log-label">Live Garden Log</span>
             </div>
-            <div class="pl-3 space-y-1">
-              <div>☕ Fuel: <span class="text-stone-700">Barako coffee, black</span></div>
-              <div>🎧 Beats: <span class="text-stone-700">Synthwave instrumentals</span></div>
-              <div>🟢 Task: <span class="text-stone-700">Optimizing rendering performance</span></div>
+            <div class="live-log-content">
+              <div>☕ Fuel: <span class="live-log-value">Spanish Latte</span></div>
+              <div>🎧 Beats: <span class="live-log-value">Pop</span></div>
             </div>
           </div>
 
         </div>
-        
+
         <!-- Right Column: Deep Essay Content -->
-        <div class="md:col-span-2 flex flex-col justify-start">
-          <header class="mb-8">
-            <h2 class="font-serif text-2xl md:text-3xl text-stone-900 tracking-tight mb-2">Amiel Benedict H. Mirasol</h2>
-            <div class="border-b border-stone-100 w-full mt-2"></div>
+        <div class="member-right">
+          <header class="member-header">
+            <h2 class="member-name">Amiel Benedict H. Mirasol</h2>
+            <hr class="member-name-divider">
           </header>
-          
+
           <!-- Short Bio -->
-          <p class="text-stone-600 font-serif italic text-base leading-relaxed mb-8">
+          <p class="member-bio">
             “An aspiring software engineer from Iloilo, passionate about web development, clean coding practices, and building interactive, beautiful client experiences.”
           </p>
 
           <!-- Expanded Hobbies Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               I. Expanded Hobbies
             </h3>
-            <div class="space-y-4 text-stone-600 text-sm md:text-base leading-relaxed">
+            <div class="section-content hobbies">
               <p>
-                <strong>Full-Stack Web Development:</strong> I love spending my weekends working on personal web apps. I started coding when I was in high school, and it has evolved from a curious hobby into a deep passion for system architecture, backend API development, and fluid UI aesthetics.
+                <strong>Photography:</strong> Got my first camera around age 11, but didn't seriously get into photography until high school. Since then, it's become more than just a hobby, I've been part of a few media teams under student councils, which pushed me to improve and see photography as a way to document.
               </p>
               <p>
-                <strong>Competitive Gaming & Strategy:</strong> I'm a competitive 
-                <!-- Footnote on Gaming -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
-                  gamer!
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
-                    Where I learn that sometimes a strategic retreat is actually a feature, not a bug.
-                  </span>
-                </span>
-                I play 
-                <!-- Footnote on Tactical Shooters -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
-                  tactical shooters
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
-                    Current favorite is Valorant, but my aim depends entirely on how much coffee I've had.
-                  </span>
-                </span>
-                and strategy-intensive games. Gaming helps me hone my teamwork, high-speed decision making, and logical analysis under high-pressure conditions.
+                <strong>Drums:</strong> Started learning the drums in 5th grade under a music studio, but stopped after a year
+                after losing interest. Rediscovered my passion for it in junior high when I joined the
+                school's drum and lyre corps. Ever since then, I've been playing drums at church,
+                and it's also become one of my go-to ways to relieve stress.
               </p>
             </div>
           </div>
 
           <!-- College Retrospective Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               II. College Retrospective
             </h3>
-            <div class="text-stone-600 text-sm md:text-base leading-relaxed space-y-3">
+            <div class="section-content">
               <p>
-                My years in college have been an incredible journey of self-discovery and growth. I've realized that software development isn't just about typing syntax—it's an exercise in solving human problems. Working on group projects has taught me that collaboration, mutual respect, and modular planning are just as critical as raw coding abilities.
+                Over my time in college, I've gained a solid foundation in programming and various software engineering concepts, things I had little to no exposure to before. Each course and activity has added something to that foundation, and I've come to realize that no knowledge is ever wasted, even the ones that seemed minor at the time. College also taught me how to manage my time properly, something I had to learn the hard way to avoid cramming, and it helped me grow more comfortable working in teams and handling the pressure that comes with grades and deadlines. More than anything, I've learned not to take any activity too lightly, because every point earned and every lesson learned, no matter how small, will be useful somewhere down the road.
               </p>
-              
+
               <!-- Monospace Skill Marks -->
-              <div class="pt-4 flex flex-wrap gap-2 text-stone-500 font-mono text-[11px]">
+              <div class="skill-tags">
                 <span>[html/css]</span>
                 <span>[javascript]</span>
                 <span>[python]</span>
@@ -213,52 +183,52 @@
         </div>
       </section>
 
-      <hr class="border-stone-200/60 my-10">
+      <hr class="member-divider">
 
       <!-- Member 02: Venz -->
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-        
+      <section class="member-section">
+
         <!-- Left Column: Portrait & Details -->
-        <div class="md:col-span-1">
-          <span class="font-mono text-xs text-stone-400 uppercase tracking-widest block mb-4">II / III</span>
-          
+        <div class="member-left">
+          <span class="member-index">II / III</span>
+
           <!-- Quiet Desaturated Image with Lift Effect -->
-          <div class="overflow-hidden border border-stone-200 bg-stone-100 mb-6 transition-all duration-700 ease-out hover:scale-[1.03] hover:-translate-y-1.5 hover:shadow-md aspect-square flex items-center justify-center p-4">
-            <svg class="w-full h-full text-stone-850 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="member-portrait">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Floating Symbol -->
               <text x="100" y="26" font-family="Playfair Display, Georgia, serif" font-size="14" font-weight="600" fill="currentColor" letter-spacing="2" text-anchor="middle">€ • €</text>
-              
+
               <!-- Background Circle (soft sage) -->
               <circle cx="100" cy="112" r="70" fill="#e1e6e2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              
+
               <!-- Character Group -->
               <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <!-- Hair back (curly) -->
                 <path d="M 76 104 C 70 88, 86 70, 100 70 C 114 70, 130 88, 124 104 Z" fill="#2d2a27" />
-                
+
                 <!-- Neck -->
                 <path d="M 92 135 L 92 148" />
                 <path d="M 108 135 L 108 148" />
-                
+
                 <!-- Face Outline -->
                 <path d="M 80 104 C 80 128, 88 138, 100 138 C 112 138, 120 128, 120 104 C 120 104, 120 90, 100 90 C 80 90, 80 104, 80 104 Z" fill="#fcfbfa" />
-                
+
                 <!-- Eyes (expressionless) -->
                 <circle cx="93" cy="113" r="2" fill="currentColor" stroke="none" />
                 <circle cx="107" cy="113" r="2" fill="currentColor" stroke="none" />
-                
+
                 <!-- Nose -->
                 <path d="M 100 115 L 100 120" />
-                
+
                 <!-- Mouth (flat, horizontal) -->
                 <path d="M 94 127 L 106 127" />
-                
+
                 <!-- Curly bangs/front curls -->
                 <path d="M 78 98 Q 88 88 94 92" fill="none" />
                 <path d="M 122 98 Q 112 88 106 92" fill="none" />
                 <path d="M 86 86 Q 96 78 100 86" fill="none" />
                 <path d="M 114 86 Q 104 78 100 86" fill="none" />
-                
+
                 <!-- Casual crewneck jacket -->
                 <path d="M 68 182 C 72 165, 88 146, 88 144" fill="none" />
                 <path d="M 132 182 C 128 165, 112 146, 112 144" fill="none" />
@@ -267,73 +237,72 @@
               </g>
             </svg>
           </div>
-          
+
           <!-- Personal Metadata -->
-          <div class="space-y-4 pt-4 border-t border-stone-200/60">
+          <div class="member-meta">
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Full Name</span>
-              <span class="font-serif text-sm text-stone-950 font-medium">Venz Onver Bidaure</span>
+              <span class="meta-label">Full Name</span>
+              <span class="meta-value font-medium">Venz Onver Bidaure</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Age & Birthdate</span>
-              <span class="font-serif text-sm text-stone-950">21 / Mar 14, 2005</span>
+              <span class="meta-label">Age & Birthdate</span>
+              <span class="meta-value">20 / September 16, 2005</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Current Location</span>
-              <span class="font-serif text-sm text-stone-950">Jaro, Iloilo City, PH</span>
+              <span class="meta-label">Current Location</span>
+              <span class="meta-value">Saintsville, Zarraga, Iloilo, PH</span>
             </div>
           </div>
 
           <!-- Live Vibe Component -->
-          <div class="pt-6 border-t border-stone-200/60 mt-6 font-mono text-[11px] text-stone-500 space-y-2.5">
-            <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-              <span class="text-stone-400 uppercase tracking-wider">Live Garden Log</span>
+          <div class="live-log">
+            <div class="live-log-header">
+              <span class="live-log-dot"></span>
+              <span class="live-log-label">Live Garden Log</span>
             </div>
-            <div class="pl-3 space-y-1">
-              <div>☕ Fuel: <span class="text-stone-700">Matcha latte</span></div>
-              <div>🎧 Beats: <span class="text-stone-700">Acoustic folk playlists</span></div>
-              <div>🟢 Task: <span class="text-stone-700">Color grading RAW photos</span></div>
+            <div class="live-log-content">
+              <div>☕ Fuel: <span class="live-log-value">Iced Americano </span></div>
+              <div>🎧 Beats: <span class="live-log-value">House Music playlists</span></div>
             </div>
           </div>
 
         </div>
-        
+
         <!-- Right Column: Deep Essay Content -->
-        <div class="md:col-span-2 flex flex-col justify-start">
-          <header class="mb-8">
-            <h2 class="font-serif text-2xl md:text-3xl text-stone-900 tracking-tight mb-2">Venz Onver Bidaure</h2>
-            <div class="border-b border-stone-100 w-full mt-2"></div>
+        <div class="member-right">
+          <header class="member-header">
+            <h2 class="member-name">Venz Onver Bidaure</h2>
+            <hr class="member-name-divider">
           </header>
-          
+
           <!-- Short Bio -->
-          <p class="text-stone-600 font-serif italic text-base leading-relaxed mb-8">
+          <p class="member-bio">
             “A dedicated web developer and programmer who loves turning complex logic into smooth, visual user experiences.”
           </p>
 
           <!-- Expanded Hobbies Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               I. Expanded Hobbies
             </h3>
-            <div class="space-y-4 text-stone-600 text-sm md:text-base leading-relaxed">
+            <div class="section-content hobbies">
               <p>
-                <strong>Photography & Media Production:</strong> As a developer and photographer in the 
+                <strong>Photography & Media Production:</strong> As a developer and photographer in the
                 <!-- Footnote on Indie Media -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
+                <span class="footnote accent">
                   indie media
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
+                  <span class="footnote-tooltip">
                     A group of creative friends running around with heavy cameras and way too much artistic passion.
                   </span>
                 </span>
                 collective, I specialize in landscape and portrait photography. I enjoy aligning visual compositions and color grading cinematic video shorts to build digital stories.
               </p>
               <p>
-                <strong>Acoustic Guitar & Music:</strong> I play the 
+                <strong>Acoustic Guitar & Music:</strong> I play the
                 <!-- Footnote on Acoustic Guitar -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
+                <span class="footnote accent">
                   acoustic guitar
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
+                  <span class="footnote-tooltip">
                     Currently trying to master a Fingerstyle arrangement that is way out of my league.
                   </span>
                 </span>
@@ -343,25 +312,25 @@
           </div>
 
           <!-- College Retrospective Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               II. College Retrospective
             </h3>
-            <div class="text-stone-600 text-sm md:text-base leading-relaxed space-y-3">
+            <div class="section-content">
               <p>
-                College has taught me 
+                I've learned to navigate complex codebases and adapt to new tools and technical stacks with confidence, building up skills in software engineering, web development, git workflows, media production, and graphic design along the way. College has also taught me
                 <!-- Footnote on Resilience -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
+                <span class="footnote accent">
                   resilience.
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
+                  <span class="footnote-tooltip">
                     Or, the art of staring at a screen until the code compiles by sheer intimidation.
                   </span>
                 </span>
-                Debugging a complex codebase late into the night can be challenging, but finding the solution teaches patience and logical tracing. I have learned to appreciate the development journey rather than just the final product, adapting to new tools and technical stacks with confidence.
+                Debugging late into the night can be frustrating, but finding the solution on the other side teaches patience and logical tracing. More than the output, I've learned to appreciate the development journey itself, the process matters just as much as the final product.
               </p>
-              
+
               <!-- Monospace Skill Marks -->
-              <div class="pt-4 flex flex-wrap gap-2 text-stone-500 font-mono text-[11px]">
+              <div class="skill-tags">
                 <span>[software-engineering]</span>
                 <span>[web-development]</span>
                 <span>[git/workflow]</span>
@@ -375,50 +344,50 @@
         </div>
       </section>
 
-      <hr class="border-stone-200/60 my-10">
+      <hr class="member-divider">
 
       <!-- Member 03: Fletcher -->
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-        
+      <section class="member-section">
+
         <!-- Left Column: Portrait & Details -->
-        <div class="md:col-span-1">
-          <span class="font-mono text-xs text-stone-400 uppercase tracking-widest block mb-4">III / III</span>
-          
+        <div class="member-left">
+          <span class="member-index">III / III</span>
+
           <!-- Quiet Desaturated Image with Lift Effect -->
-          <div class="overflow-hidden border border-stone-200 bg-stone-100 mb-6 transition-all duration-700 ease-out hover:scale-[1.03] hover:-translate-y-1.5 hover:shadow-md aspect-square flex items-center justify-center p-4">
-            <svg class="w-full h-full text-stone-850 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="member-portrait">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Floating Symbol -->
               <text x="100" y="26" font-family="Playfair Display, Georgia, serif" font-size="14" font-weight="600" fill="currentColor" letter-spacing="2" text-anchor="middle">$ • $</text>
-              
+
               <!-- Background Circle (soft clay) -->
               <circle cx="100" cy="112" r="70" fill="#f2e2df" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              
+
               <!-- Character Group -->
               <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <!-- Hair Parting Outline -->
                 <path d="M 79 104 C 78 84, 90 76, 100 78 C 112 78, 121 84, 121 104 Z" fill="#2d2a27" />
-                
+
                 <!-- Neck -->
                 <path d="M 92 135 L 92 148" />
                 <path d="M 108 135 L 108 148" />
-                
+
                 <!-- Face Outline -->
                 <path d="M 80 104 C 80 128, 88 138, 100 138 C 112 138, 120 128, 120 104 C 120 104, 120 90, 100 90 C 80 90, 80 104, 80 104 Z" fill="#fcfbfa" />
-                
+
                 <!-- Eyes (expressionless) -->
                 <circle cx="93" cy="113" r="2" fill="currentColor" stroke="none" />
                 <circle cx="107" cy="113" r="2" fill="currentColor" stroke="none" />
-                
+
                 <!-- Nose -->
                 <path d="M 100 115 L 100 120" />
-                
+
                 <!-- Mouth (flat, horizontal) -->
                 <path d="M 94 127 L 106 127" />
-                
+
                 <!-- Side parting line details -->
                 <path d="M 80 94 Q 92 84 98 94" fill="none" />
                 <path d="M 100 80 L 102 94" fill="none" />
-                
+
                 <!-- Cozy Hoodie collar and shoulders -->
                 <path d="M 80 142 C 72 150, 70 170, 68 182" fill="none" />
                 <path d="M 120 142 C 128 150, 130 170, 132 182" fill="none" />
@@ -432,101 +401,87 @@
               </g>
             </svg>
           </div>
-          
+
           <!-- Personal Metadata -->
-          <div class="space-y-4 pt-4 border-t border-stone-200/60">
+          <div class="member-meta">
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Full Name</span>
-              <span class="font-serif text-sm text-stone-950 font-medium">Fletcher Jan Malala</span>
+              <span class="meta-label">Full Name</span>
+              <span class="meta-value font-medium">Fletcher Jan T. Malala</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Age & Birthdate</span>
-              <span class="font-serif text-sm text-stone-950">20 / Oct 12, 2005</span>
+              <span class="meta-label">Age & Birthdate</span>
+              <span class="meta-value">20 / January 19, 2006</span>
             </div>
             <div>
-              <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider block">Current Location</span>
-              <span class="font-serif text-sm text-stone-950">Mandurriao, Iloilo, PH</span>
+              <span class="meta-label">Current Location</span>
+              <span class="meta-value">
+                <!-- Footnote on Hometown -->
+                <span class="footnote">
+                  Bakhaw, Mandurriao
+                  <span class="footnote-tooltip">
+                    Originally from Kabankalan City, Negros Occidental.
+                  </span>
+                </span>, Iloilo, PH
+              </span>
             </div>
           </div>
 
           <!-- Live Vibe Component -->
-          <div class="pt-6 border-t border-stone-200/60 mt-6 font-mono text-[11px] text-stone-500 space-y-2.5">
-            <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-              <span class="text-stone-400 uppercase tracking-wider">Live Garden Log</span>
+          <div class="live-log">
+            <div class="live-log-header">
+              <span class="live-log-dot"></span>
+              <span class="live-log-label">Live Garden Log</span>
             </div>
-            <div class="pl-3 space-y-1">
-              <div>☕ Fuel: <span class="text-stone-700">Earl grey tea</span></div>
-              <div>🎧 Beats: <span class="text-stone-700">Ambient rain tracks</span></div>
-              <div>🟢 Task: <span class="text-stone-700">Refactoring SQL query joints</span></div>
+            <div class="live-log-content">
+              <div>☕ Fuel: <span class="live-log-value">Coffee(Lucky day)</span></div>
+              <div>🎧 Beats: <span class="live-log-value">ASMR</span></div>
             </div>
           </div>
 
         </div>
-        
+
         <!-- Right Column: Deep Essay Content -->
-        <div class="md:col-span-2 flex flex-col justify-start">
-          <header class="mb-8">
-            <h2 class="font-serif text-2xl md:text-3xl text-stone-900 tracking-tight mb-2">Fletcher Jan Malala</h2>
-            <div class="border-b border-stone-100 w-full mt-2"></div>
+        <div class="member-right">
+          <header class="member-header">
+            <h2 class="member-name">Fletcher Jan T. Malala</h2>
+            <hr class="member-name-divider">
           </header>
-          
+
           <!-- Short Bio -->
-          <p class="text-stone-600 font-serif italic text-base leading-relaxed mb-8">
+          <p class="member-bio">
             “A developer and system creator who loves structural code, clean system logic, and solving complex back-end operations.”
           </p>
 
           <!-- Expanded Hobbies Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               I. Expanded Hobbies
             </h3>
-            <div class="space-y-4 text-stone-600 text-sm md:text-base leading-relaxed">
+            <div class="section-content hobbies">
               <p>
-                <strong>System Architecture & Automation:</strong> I enjoy building automated pipelines and server scripts. Spending five hours 
-                <!-- Footnote on Automation -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
-                  automating
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
-                    If a manual task takes more than five minutes, I'll spend five hours writing a script to automate it.
-                  </span>
-                </span>
-                a repetitive task is extremely satisfying. It helps keep my workflows highly efficient and lets me focus on core engineering challenges rather than chores.
+                <strong>Chess:</strong> Played chess since I was a kid, taught by my brother who was determined to help me learn the game. Always played in school events and tournaments, but stopped playing professionally after developing imposter syndrome.
               </p>
               <p>
-                <strong>Bicycling & Urban Exploration:</strong> I spend my late afternoons 
-                <!-- Footnote on Cycling -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
-                  cycling
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
-                    Currently trying to clock 50 kilometers in one run without getting lost in the backstreets of Pavia.
-                  </span>
-                </span>
-                through local trails. Exploring the urban landscape on two wheels helps clear my thoughts and keeps me physically active after long coding sprints.
+                <strong>Athletics:</strong> Mainly running (400m, 1km, 2km etc.), long jump, and shot put. Highest competition reached is regionals.
+              </p>
+              <p>
+                <strong>Volleyball:</strong> Started playing volleyball after realizing basketball was never my game. Been playing ever since, and try to play whenever I can.
               </p>
             </div>
           </div>
 
           <!-- College Retrospective Section -->
-          <div class="mb-8">
-            <h3 class="font-mono text-xs text-stone-400 uppercase tracking-wider border-b border-stone-200 pb-1.5 mb-3 inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-stone-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500 after:origin-left cursor-default">
+          <div class="section-block">
+            <h3 class="section-title">
               II. College Retrospective
             </h3>
-            <div class="text-stone-600 text-sm md:text-base leading-relaxed space-y-3">
+            <div class="section-content">
               <p>
-                Throughout college, I've realized that software engineering is less about writing code and more about understanding 
-                <!-- Footnote on Systems -->
-                <span class="relative group cursor-help border-b border-dotted border-stone-400 inline-block font-medium text-stone-850">
-                  system behavior.
-                  <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-stone-100 border border-stone-200 text-[11px] font-serif text-stone-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-350 pointer-events-none shadow-sm z-10 leading-snug font-normal text-center">
-                    Writing code that works is easy; writing code that still works when someone else edits it is the real challenge.
-                  </span>
-                </span>
-                I've learned to build programs with future extensions in mind, ensuring our codebases can grow gracefully and remain easy to maintain.
+                Throughout college, I've learned core software engineering concepts, process, tools, practices, patterns, and more, while also discovering that my management, communication, and execution skills still need work, lessons that really only surface once you're working in a team. On a personal level, this journey has strengthened my problem-solving skills and logical thinking, along with a deeper sense of perseverance, and as I continue to learn, I hope to keep improving further while I'm here.
               </p>
-              
+
               <!-- Monospace Skill Marks -->
-              <div class="pt-4 flex flex-wrap gap-2 text-stone-500 font-mono text-[11px]">
+              <div class="skill-tags">
                 <span>[backend-dev]</span>
                 <span>[system-architecture]</span>
                 <span>[databases-sql]</span>
@@ -545,13 +500,13 @@
   </main>
 
   <!-- Editorial Footer -->
-  <footer class="max-w-4xl mx-auto w-full px-6 py-12 border-t border-stone-200 mt-12">
-    <div class="flex flex-col md:flex-row items-center justify-between text-[11px] font-mono text-stone-400 uppercase tracking-wider space-y-4 md:space-y-0">
+  <footer class="site-footer">
+    <div class="footer-content">
       <span>© 2026 Try-Angle. All rights reserved.</span>
       <span>
-        Built calmly with 
-        <a href="https://github.com/amiel-dotcom/Group-Intro-page" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-stone-600 transition-all duration-300">
-          Vanilla HTML & Tailwind CSS
+        Built calmly with
+        <a href="https://github.com/amiel-dotcom/Group-Intro-page" target="_blank" rel="noopener noreferrer" class="footer-link">
+          Vanilla HTML & CSS
         </a>
       </span>
     </div>
