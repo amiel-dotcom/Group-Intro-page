@@ -3,10 +3,48 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("Welcome to Try-Angle. A calm space in the digital landscape.");
 
   const soundscapeBtn = document.getElementById('soundscape-btn');
+  const darkmodeBtn = document.getElementById('darkmode-btn');
   let audioCtx = null;
   let noiseSource = null;
   let gainNode = null;
   let lfo = null;
+
+  // Dark Mode Functions
+  function applyTheme(isDark) {
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add('dark-mode');
+      darkmodeBtn.textContent = '[ Theme: Dark ]';
+      darkmodeBtn.classList.add('is-active');
+    } else {
+      html.classList.remove('dark-mode');
+      darkmodeBtn.textContent = '[ Theme: Light ]';
+      darkmodeBtn.classList.remove('is-active');
+    }
+    localStorage.setItem('try-angle-theme', isDark ? 'dark' : 'light');
+  }
+
+  function toggleTheme() {
+    const isDark = !document.documentElement.classList.contains('dark-mode');
+    applyTheme(isDark);
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('try-angle-theme');
+  if (savedTheme) {
+    applyTheme(savedTheme === 'dark');
+  } else {
+    // Check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark);
+  }
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('try-angle-theme')) {
+      applyTheme(e.matches);
+    }
+  });
 
   // brown noise sounds way more like real rain than white noise does
   function createBrownNoise(ctx) {
@@ -91,4 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
       startSoundscape();
     }
   });
+
+  darkmodeBtn.addEventListener('click', toggleTheme);
 });
