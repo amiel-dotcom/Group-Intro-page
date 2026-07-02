@@ -489,15 +489,7 @@ html.dark-mode .member-portrait svg path[fill="#fcfbfa"] {
   margin: 0;
 }
 
-.skill-tags {
-  padding-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  color: var(--text-secondary);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-}
+
 
 
 .site-footer {
