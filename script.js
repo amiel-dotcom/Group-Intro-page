@@ -1,6 +1,6 @@
-// Try-Angle Zen Garden - Interactive Audio & Logging
+// Try-Angle
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("Welcome to Try-Angle. A calm space in the digital landscape.");
+  console.log("Welcome to Try-Angle. The Team that tries every angle");
 
   const soundscapeBtn = document.getElementById('soundscape-btn');
   const darkmodeBtn = document.getElementById('darkmode-btn');
