@@ -304,6 +304,39 @@ html.dark-mode .member-portrait svg path[fill="#fcfbfa"] {
   font-weight: 500;
 }
 
+.location-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.location-toggle-button {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  background: transparent;
+  color: var(--text-tertiary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.location-toggle-button:hover,
+.location-toggle-button:focus-visible {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+  border-color: var(--text-tertiary);
+}
+
+.location-toggle-button[aria-pressed="true"] {
+  color: var(--text-darkest);
+  border-color: var(--text-tertiary);
+}
+
 .footnote {
   position: relative;
   cursor: help;

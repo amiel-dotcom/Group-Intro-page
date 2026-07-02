@@ -131,4 +131,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   darkmodeBtn.addEventListener('click', toggleTheme);
+
+  // Fletcher location switch
+  const locationToggleButton = document.querySelector('.location-toggle-button');
+  if (locationToggleButton) {
+    const locationCurrent = document.querySelector('.location-current');
+    const locationOriginal = document.querySelector('.location-original');
+
+    function toggleLocation() {
+      const showingOriginal = !locationOriginal.hasAttribute('hidden');
+
+      if (showingOriginal) {
+        locationOriginal.setAttribute('hidden', '');
+        locationCurrent.removeAttribute('hidden');
+        locationToggleButton.textContent = 'Show Original';
+        locationToggleButton.setAttribute('aria-pressed', 'false');
+      } else {
+        locationCurrent.setAttribute('hidden', '');
+        locationOriginal.removeAttribute('hidden');
+        locationToggleButton.textContent = 'Show Current';
+        locationToggleButton.setAttribute('aria-pressed', 'true');
+      }
+    }
+
+    locationToggleButton.addEventListener('click', toggleLocation);
+  }
 });
